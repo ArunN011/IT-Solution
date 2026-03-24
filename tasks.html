@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasks - MR IT</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <div class="sidebar">
+    <h3 class="logo">Stackly</h3>
+
+    <ul>
+      <li><a href="Admin.html"><i class="bi bi-grid"></i> Dashboard</a></li>
+      <li class="active"><a href="tasks.html"><i class="bi bi-list-task"></i> Tasks</a></li>
+      <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+    </ul>
+  </div>
+
+  <div class="overlay" onclick="toggleMenu()"></div>
+
+ 
+  <div class="main">
+
+   
+    <div class="topbar">
+      <i class="bi bi-list menu-toggle" onclick="toggleMenu()"></i>
+
+      <div class="right">
+        <i class="bi bi-bell"></i>
+
+        <div class="profile">
+          <img src="https://i.pravatar.cc/40">
+          <div>
+            <strong id="userName"></strong>
+            <p id="userEmail"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+    <h2 class="title">Tasks Management</h2>
+
+  
+    <div class="row g-3 mt-2">
+
+      <div class="col-md-4">
+        <div class="task-card">
+          <h5>Server Monitoring Setup</h5>
+          <p>Implement real-time server monitoring using cloud tools.</p>
+          <span class="badge bg-success">Completed</span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="task-card">
+          <h5>Database Optimization</h5>
+          <p>Improve MySQL query performance and indexing.</p>
+          <span class="status in-progress">In Progress</span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="task-card">
+          <h5>Cyber Security Audit</h5>
+          <p>Perform vulnerability scanning and penetration testing.</p>
+          <span class="badge bg-danger">Pending</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="box mt-4">
+      <h5>All Tasks</h5>
+
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Department</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+<tr>
+  <td>Cloud Migration</td>
+  <td>DevOps</td>
+  <td><span class="priority high">High</span></td>
+  <td><span class="status in-progress">In Progress</span></td>
+  <td>25 Mar 2026</td>
+</tr>
+
+<tr>
+  <td>API Integration</td>
+  <td>Backend</td>
+  <td><span class="priority medium">Medium</span></td>
+  <td><span class="status completed">Completed</span></td>
+  <td>20 Mar 2026</td>
+</tr>
+
+<tr>
+  <td>Firewall Setup</td>
+  <td>Security</td>
+  <td><span class="priority high">High</span></td>
+  <td><span class="status pending">Pending</span></td>
+  <td>28 Mar 2026</td>
+</tr>
+
+<tr>
+  <td>UI Performance Fix</td>
+  <td>Frontend</td>
+  <td><span class="priority low">Low</span></td>
+  <td><span class="status in-progress">In Progress</span></td>
+  <td>30 Mar 2026</td>
+</tr>
+
+</tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script >
+    document.addEventListener("DOMContentLoaded", function(){
+  function toggleMenu(){
+    document.querySelector(".sidebar").classList.toggle("active");
+    document.querySelector(".overlay").classList.toggle("show");
+  }
+  window.toggleMenu = toggleMenu;
+
+  document.querySelectorAll(".sidebar a").forEach(link=>{
+  link.addEventListener("click", function(e){
+
+    const href = this.getAttribute("href");
+
+    
+    if(!href) return;
+
+    
+    e.preventDefault();
+
+  
+    document.querySelector(".sidebar").classList.remove("active");
+    document.querySelector(".overlay").classList.remove("show");
+
+  
+    setTimeout(()=>{
+      window.location.href = href;
+    }, 200); 
+
+  });
+});
+    });
+
+  const email = localStorage.getItem("userEmail") || "admin@gmail.com";
+  document.getElementById("userEmail").innerText = email;
+  document.getElementById("userName").innerText = email.split("@")[0];
+</script>
+</body>
+</html>

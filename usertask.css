@@ -1,0 +1,174 @@
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#f3f4f6;
+}
+
+.dashboard{ display:flex; }
+
+
+.sidebar{
+  width:240px;
+  background:#1e1b4b;
+  color:white;
+  height:100vh;
+  padding:20px;
+  position:fixed;
+  z-index:1000;
+}
+
+.sidebar ul{ list-style:none; padding:0; }
+
+.sidebar li{
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:10px; 
+}
+
+.sidebar li:hover,
+.sidebar .active{
+  background:#312e81;
+}
+
+.sidebar a{
+  color:white;
+  text-decoration:none;
+}
+
+.main{
+  margin-left:240px;
+  width:100%;
+  padding:20px;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:white;
+  padding:10px;
+  border-radius:10px;
+}
+
+.search{ flex:1; }
+.search input{
+  width:100%;
+  padding:8px;
+  border:none;
+  outline:none;
+  background:#f1f5f9;
+  border-radius:10px;
+}
+.text-purple{
+  color:#7c3aed;
+}
+.chart-box{
+  position: relative;
+  height: 260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+
+.progress-bar-custom{
+  width:100%;
+  height:10px;
+  background:#e5e7eb;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.progress-fill{
+  width:75%;
+  height:100%;
+  background:#7c3aed;
+  border-radius:10px;
+}
+
+.right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.profile img{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+}
+
+.task-card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+}
+
+.status{
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  display:inline-block;
+}
+
+.completed{ background:#d1fae5; color:#065f46; }
+.in-progress{ background:#fef3c7; color:#92400e; }
+.pending{ background:#fee2e2; color:#991b1b; }
+
+.priority{
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+.high{ background:#fee2e2; color:#991b1b; }
+.medium{ background:#fef3c7; color:#92400e; }
+.low{ background:#dbeafe; color:#1e40af; }
+
+.overlay{
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  z-index:900;
+}
+
+.menu-toggle{
+  display:none;
+  font-size:24px;
+}
+
+@media(max-width:768px){
+
+  .menu-toggle{ display:block; }
+
+  .sidebar{
+    left:-100%;
+    transition:0.3s;
+  }
+
+  .sidebar.active{ 
+    left:0; 
+}
+
+  .main{
+     margin-left:0;
+     }
+
+  .overlay.show{ 
+    display:block;
+ }
+ .search{
+    display: none;
+ }
+  .chart-box{
+    height: 160px;
+  }
+}

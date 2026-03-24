@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly IT Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <div class="sidebar">
+    <h3 class="logo">Stackly </h3>
+
+    <p class="menu-title">MENU</p>
+   <ul>
+
+  <li class="active">
+    <a href="admin.html">
+      <i class="bi bi-grid"></i> Dashboard
+    </a>
+  </li>
+
+  <li>
+    <a href="tasks.html">
+      <i class="bi bi-list-task"></i> Tasks
+    </a>
+  </li>
+
+  <li>
+    <a href="index.html">
+      <i class="bi bi-house"></i> Back to Home
+    </a>
+  </li>
+
+</ul>
+   <p class="menu-title mt-4">GENERAL</p>
+    <ul>
+      <li> <a href="error.html"><i class="bi bi-gear"></i> Settings</a></li>
+      <li><a href="error.html"><i class="bi bi-question-circle"></i> Help</a></li>
+      <li><a href="index.html"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="overlay" onclick="toggleMenu()"></div>
+
+  <div class="main">
+
+
+    <div class="topbar">
+
+      <i class="bi bi-list menu-toggle" onclick="toggleMenu()"></i>
+
+      <div class="search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search task">
+      </div>
+
+      <div class="right">
+        <i class="bi bi-envelope"></i>
+        <i class="bi bi-bell"></i>
+
+        <div class="profile">
+          <img src="https://i.pravatar.cc/40">
+          <div>
+            <strong id="userName">User</strong>
+            <p id="userEmail"></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h2 class="title">Dashboard</h2>
+
+    
+    <div class="row g-3">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-box purple">
+          <p>Total projects</p>
+          <h2>32</h2>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-box">
+          <p>Ended projects</p>
+          <h2>20</h2>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-box">
+          <p>Running projects</p>
+          <h2>10</h2>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-box">
+          <p>Pending projects</p>
+          <h2>2</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row g-3 mt-2">
+
+      <div class="col-lg-6">
+        <div class="box">
+          <h5>Reminders</h5>
+          <h4 class="text-purple">Meeting with Global Company</h4>
+          <a href="error.html" class="btn btn-purple">Start Meeting</a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="box">
+          <h5>Project Analysis</h5>
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+ 
+    <div class="row g-3 mt-2">
+
+     <div class="col-lg-6">
+  <div class="box">
+    <h5>Project Progress</h5>
+
+   
+    <div class="chart-container">
+      <canvas id="donutChart"></canvas>
+    </div>
+
+  </div>
+</div>
+
+      <div class="col-lg-6">
+        <div class="box time-box">
+          <h5>Time Tracker</h5>
+          <h2 id="timer">00:00:00</h2>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
