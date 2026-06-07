@@ -130,16 +130,16 @@
 .hero-btn {
   display: inline-block;
   padding: 12px 25px;
-  border: 2px solid #0f172a;
+  border: 2px solid #25118a;
   border-radius: 30px;
-  color: #0f172a;
+  color: #12368a;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
 }
 
 .hero-btn:hover {
-  background: #0f172a;
+  background: #2555c5;
   color: #fff;
 }
 
@@ -595,8 +595,8 @@
 .news-card {
   border-radius: 15px;
   overflow: hidden;
-  background: #064e3b; 
-  color: #fff;
+  background: #e0e4e9; 
+  color: #141313;
   transition: 0.4s;
   height: 100%;
 }
@@ -612,7 +612,7 @@
 }
 
 .tag {
-  color: #a7f3d0;
+  color: #d40e0e;
   font-size: 14px;
   font-weight: 600;
 }
@@ -669,7 +669,7 @@
 }
 
 .insight-box {
-  background: linear-gradient(135deg, #022c22, #020617);
+  background: linear-gradient(135deg, #d7d6dc, #474748);
   color: #fff;
   padding: 50px;
   border-radius: 30px;
@@ -678,10 +678,11 @@
 .insight-box h2 {
   font-size: 40px;
   margin-bottom: 15px;
+  color:black;
 }
 
 .insight-box p {
-  color: #cbd5f5;
+  color: #121213;
   max-width: 700px;
   margin-bottom: 25px;
 }
@@ -690,15 +691,15 @@
 .insight-btn {
   display: inline-block;
   padding: 12px 25px;
-  border: 2px solid #10b981; 
-  color: #10b981;
+  border: 2px solid #5910b9; 
+  color: #101eb9;
   border-radius: 30px;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .insight-btn:hover {
-  background: #10b981;
+  background: #0762eb;
   color: #022c22;
 }
 
